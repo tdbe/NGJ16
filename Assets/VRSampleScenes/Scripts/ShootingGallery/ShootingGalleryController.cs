@@ -12,6 +12,8 @@ namespace VRStandardAssets.ShootingGallery
     // spawnning more likely when there are fewer.
     public class ShootingGalleryController : MonoBehaviour
     {
+        //[SerializeField]
+        //private bool forceGameStart = false;
         [SerializeField] private SessionData.GameType m_GameType;       // Whether this is a 180 or 360 shooter.
         [SerializeField] private int m_IdealTargetNumber = 5;           // How many targets aim to be on screen at once.
         [SerializeField] private float m_BaseSpawnProbability = 0.7f;   // When there are the ideal number of targets, this is the probability another will spawn.
@@ -73,7 +75,8 @@ namespace VRStandardAssets.ShootingGallery
             m_InputWarnings.TurnOnSingleTapWarnings ();
 
             // Wait for the selection slider to finish filling.
-            yield return StartCoroutine (m_SelectionSlider.WaitForBarToFill ());
+            
+                yield return StartCoroutine (m_SelectionSlider.WaitForBarToFill ());
 
             // Turn off the tap warnings since it will now be tap to fire.
             m_InputWarnings.TurnOffDoubleTapWarnings ();

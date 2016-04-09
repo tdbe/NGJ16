@@ -17,6 +17,7 @@ GameObject:
   - 82: {fileID: 8276420}
   - 82: {fileID: 8238864}
   - 82: {fileID: 8238770}
+  - 114: {fileID: 11461660}
   m_Layer: 0
   m_Name: ShooterTarget
   m_TagString: Untagged
@@ -54,7 +55,9 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -331,12 +334,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Score: 1
-  m_TimeOutDuration: 3
+  m_TimeOutDuration: 999999
   m_DestroyTimeOutDuration: 5
   m_DestroyPrefab: {fileID: 111004, guid: 0a846076b99dbce45ae4373d0aff8258, type: 2}
   m_DestroyClip: {fileID: 8300000, guid: fd01d3e429819774181394d1ad09e6f2, type: 3}
   m_SpawnClip: {fileID: 8300000, guid: 906fabe377b8e8f4397285b9c752041a, type: 3}
   m_MissedClip: {fileID: 8300000, guid: ab3d0eee05f16c74db5adf795fb073d5, type: 3}
+--- !u!114 &11461660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238c5b1bc5c46e54685522313fbf5269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
 --- !u!114 &11499314
 MonoBehaviour:
   m_ObjectHideFlags: 1
