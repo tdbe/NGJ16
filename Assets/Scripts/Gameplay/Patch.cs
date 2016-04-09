@@ -8,36 +8,42 @@ public class Patch : MonoBehaviour
     public float timeToFix = 1f;
     public string tagToFix = "isFixable";
     float time;
+    public LineRenderer lineRenderer;
+
+    void Start()
+    {
+        mainCamera = Camera.main.transform;
+        lineRenderer = GetComponent<LineRenderer>();
+    }
 
 	void FixedUpdate()
     {
         Vector3 fwd = mainCamera.TransformDirection(Vector3.forward);
+        
         RaycastHit hit;
         Ray ray = new Ray(mainCamera.position, fwd);
 
         Debug.DrawRay(mainCamera.position, mainCamera.TransformDirection(Vector3.forward) * range, Color.red);
 
-        if(Physics.Raycast(ray, out hit, range))
+        if (Input.GetMouseButton(0))
         {
-        //Check for player input in if statement
+            if (Physics.Raycast(ray, out hit, range))
+            {
+                lineRenderer.SetPosition(0, gameObject.transform.position);
+                lineRenderer.SetPosition(1, hit.transform.position);
                 if (hit.collider.tag == tagToFix)
                 {
                     time -= Time.deltaTime;
-                    if(time < 0)
+                    if (time < 0)
                     {
-                        //FixStuff();
                         Destroy(hit.collider.gameObject);
                     }
-                } else
-                {
-                    time = timeToFix; 
                 }
-            
+            }
         }
-    }
-
-    public void FixStuff()
-    {
-        //Destroy()   
+        else
+        {
+            time = timeToFix;
+        }
     }
 }
