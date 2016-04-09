@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - isFixable
+  - restartLvl
   layers:
   - Default
   - TransparentFX
