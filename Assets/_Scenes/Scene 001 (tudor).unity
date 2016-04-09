@@ -228,6 +228,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 396c733e8ee749c44801b1ca89cc736f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b9807faad480b6b42a3a01acc464ad10, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 396c733e8ee749c44801b1ca89cc736f, type: 3}
   m_IsPrefabParent: 0
@@ -2804,6 +2808,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: d15b1be88414a5f46b57bf506f6b8957, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 916c2defac232d04697a5fd71792a2f1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15b1be88414a5f46b57bf506f6b8957, type: 3}
   m_IsPrefabParent: 0
@@ -6749,6 +6757,10 @@ Prefab:
       propertyPath: m_Name
       value: PRP_SeaBottom Distance
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f67301790b539cd4baf78d617066ee96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f67301790b539cd4baf78d617066ee96, type: 3}
   m_IsPrefabParent: 0
@@ -7164,6 +7176,10 @@ Prefab:
       propertyPath: m_Name
       value: PRP_SeaBottom (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: f67301790b539cd4baf78d617066ee96, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f9b6e9afb02e0f40af57c1e5226ad77, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f67301790b539cd4baf78d617066ee96, type: 3}
   m_IsPrefabParent: 0
