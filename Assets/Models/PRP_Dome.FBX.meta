@@ -1,11 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 3e769839d124c924191db5073b57456a
-=======
-guid: d15b1be88414a5f46b57bf506f6b8957
-timeCreated: 1460210638
-licenseType: Free
->>>>>>> c17a5eb63d247fc9047603ef60d5ca5ccd4ed28d
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -57,11 +51,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-<<<<<<< HEAD
     tangentImportMode: 3
-=======
-    tangentImportMode: 0
->>>>>>> c17a5eb63d247fc9047603ef60d5ca5ccd4ed28d
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
