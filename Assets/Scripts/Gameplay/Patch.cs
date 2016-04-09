@@ -8,6 +8,7 @@ public class Patch : MonoBehaviour
     public float timeToFix = 1f;
     public string tagToFix = "isFixable";
     float time;
+    Renderer rend;
 
 	void FixedUpdate()
     {
@@ -19,19 +20,25 @@ public class Patch : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, range))
         {
-        //Check for player input in if statement
-                if (hit.collider.tag == tagToFix)
+            if (hit.collider.tag == tagToFix)
+            {
+            rend = hit.collider.gameObject.GetComponent<Renderer>();
+            rend.material.color = Color.blue;
+                if (Input.GetMouseButton(0))
                 {
+                    
                     time -= Time.deltaTime;
-                    if(time < 0)
+                    if (time < 0)
                     {
                         //FixStuff();
                         Destroy(hit.collider.gameObject);
                     }
-                } else
-                {
-                    time = timeToFix; 
                 }
+
+            } else
+            {
+                time = timeToFix; 
+            }
             
         }
     }
