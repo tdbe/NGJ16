@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class Patch : MonoBehaviour
 {
@@ -8,13 +7,9 @@ public class Patch : MonoBehaviour
     public float range = 10f;
     public float timeToFix = 1f;
     public string tagToFix = "isFixable";
-    public string tagToRestart = "restartLvl";
     float time;
-    Renderer rend;
-    Color colorStart;
 
-
-    void FixedUpdate()
+	void FixedUpdate()
     {
         Vector3 fwd = mainCamera.TransformDirection(Vector3.forward);
         RaycastHit hit;
@@ -24,32 +19,19 @@ public class Patch : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, range))
         {
-            if (hit.collider.tag == tagToFix || hit.collider.tag == tagToRestart)
-            {
-            rend = hit.collider.gameObject.GetComponent<Renderer>();
-            colorStart = rend.material.color;
-            rend.material.color = Color.blue;
-                if (Input.GetMouseButton(0))
+        //Check for player input in if statement
+                if (hit.collider.tag == tagToFix)
                 {
-                    
                     time -= Time.deltaTime;
-                    if (time < 0)
+                    if(time < 0)
                     {
                         //FixStuff();
-                        if(hit.collider.tag == tagToFix)
-                            Destroy(hit.collider.gameObject);
-
-                        if(hit.collider.tag == tagToRestart)
-                            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
+                        Destroy(hit.collider.gameObject);
                     }
+                } else
+                {
+                    time = timeToFix; 
                 }
-
-            } else
-            {
-                time = timeToFix;
-                rend.material.color = colorStart;
-            }
             
         }
     }
