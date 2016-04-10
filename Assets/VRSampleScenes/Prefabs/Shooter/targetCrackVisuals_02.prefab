@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 458610}
   - 33: {fileID: 3362930}
   - 23: {fileID: 2379270}
+  - 114: {fileID: 11487498}
   m_Layer: 0
   m_Name: targetCrackVisuals_02
   m_TagString: isFixable
@@ -92,6 +93,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144480}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11487498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb9636615a2bff4292913ecf78e92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  water: {fileID: 0}
 --- !u!198 &19809192
 ParticleSystem:
   m_ObjectHideFlags: 1
