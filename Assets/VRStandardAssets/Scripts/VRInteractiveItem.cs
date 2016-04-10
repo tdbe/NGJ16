@@ -20,6 +20,11 @@ namespace VRStandardAssets.Utils
         protected bool m_IsOver;
 
 
+
+        private float tapDownBeginTime;
+        private bool beganHold = false;
+
+
         public bool IsOver
         {
             get { return m_IsOver; }              // Is the gaze currently over this object?
@@ -33,9 +38,51 @@ namespace VRStandardAssets.Utils
             m_IsOver = true;
 
             if (OnOver != null)
+            {
+                
                 OnOver();
+
+                if (tag == Patch.Instance.tagToFix)
+                {
+                    if (!beganHold && Input.GetButton("Fire1"))
+                    {
+                        Debug.Log("BEGAN HOLD TRUE");
+                        tapDownBeginTime = Time.time;
+                        beganHold = true;
+                    }
+
+
+                }
+            }
         }
 
+        void Update()
+        {
+            if (tag == Patch.Instance.tagToFix)
+            {
+                //if(beganHold)
+                //Debug.Log("beganTap: " + beganHold + "; tapDownBeginTime: " + tapDownBeginTime + "; Time.time - tapDownBeginTime: " + (Time.time - tapDownBeginTime) + "; Patch.Instance.timeToFix: " + Patch.Instance.timeToFix);
+
+                if ((beganHold ) && Time.time - tapDownBeginTime > Patch.Instance.timeToFix)
+                {
+                    if (OnDown != null)
+                    {
+                        OnDown();
+                    }
+                    beganHold = false;
+                }
+                /*
+                if (Input.GetButtonUp("Fire1"))
+                {
+                    beganHold = false;
+                }
+                */
+                //TODO: sparse calls, like on move
+                //Patch.Instance.UpdateLineRendererOnTarget(Vector3.zero);
+
+            }
+            
+        }
 
         public void Out()
         {
@@ -43,6 +90,8 @@ namespace VRStandardAssets.Utils
 
             if (OnOut != null)
                 OnOut();
+
+            beganHold = false;
         }
 
 
@@ -50,6 +99,8 @@ namespace VRStandardAssets.Utils
         {
             if (OnClick != null)
                 OnClick();
+
+            beganHold = false;
         }
 
 
@@ -57,6 +108,8 @@ namespace VRStandardAssets.Utils
         {
             if (OnDoubleClick != null)
                 OnDoubleClick();
+
+            beganHold = false;
         }
 
 
@@ -64,13 +117,34 @@ namespace VRStandardAssets.Utils
         {
             if (OnUp != null)
                 OnUp();
+
+            beganHold = false;
         }
 
 
         public void Down()
         {
+            
             if (OnDown != null)
-                OnDown();
+            {
+                
+                if (tag == Patch.Instance.tagToFix)
+                {
+                    if (!beganHold)
+                    {
+                        Debug.Log("BEGAN HOLD TRUE");
+                        tapDownBeginTime = Time.time;
+                        beganHold = true;
+                    }
+
+                    
+                }
+                else
+                {
+                    Patch.Instance.UpdateLineRenderer(Vector3.zero);
+                    OnDown();
+                }
+            }
         }
     }
 }
