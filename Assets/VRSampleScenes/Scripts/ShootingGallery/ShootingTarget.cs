@@ -44,13 +44,18 @@ namespace VRStandardAssets.ShootingGallery
 
         private void OnEnable ()
         {
-            m_InteractiveItem.OnDown += HandleDown;
+            m_InteractiveItem.OnDown += HandleUp;
+            m_InteractiveItem.OnUp += HandleUp;
+            
+            m_InteractiveItem.OnOut += HandleOut;
         }
 
 
         private void OnDisable ()
         {
-            m_InteractiveItem.OnDown -= HandleDown;
+            m_InteractiveItem.OnDown -= HandleUp;
+            m_InteractiveItem.OnUp -= HandleUp;
+            m_InteractiveItem.OnOut -= HandleOut;
         }
 
 
@@ -78,7 +83,10 @@ namespace VRStandardAssets.ShootingGallery
             transform.LookAt(m_CameraTransform);
 
             // Start the time out for when the target would naturally despawn.
-            StartCoroutine (MissTarget());
+            if (m_TimeOutDuration > -1)
+            {
+                StartCoroutine(MissTarget());
+            }
 
             // Start the time out for when the game ends.
             // Note this will only come into effect if the game time remaining is less than the time out duration.
@@ -89,6 +97,10 @@ namespace VRStandardAssets.ShootingGallery
         private IEnumerator MissTarget()
         {
             // Wait for the target to disappear naturally.
+
+
+         
+
             yield return new WaitForSeconds (m_TimeOutDuration);
 
             // If by this point it's already ending, do nothing else.
@@ -136,9 +148,21 @@ namespace VRStandardAssets.ShootingGallery
                 OnRemove (this);
         }
 
-
-        private void HandleDown()
+        private void HandleOver()
         {
+
+
+        }
+
+        private void HandleOut()
+        {
+
+        }
+
+        private void HandleUp()
+        {
+
+            Debug.Log("Handle Down on shooting target");
             // If it's already ending, do nothing else.
             if (m_IsEnding)
                 return;
