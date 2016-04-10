@@ -46,7 +46,6 @@ namespace VRStandardAssets.ShootingGallery
         {
             m_InteractiveItem.OnDown += HandleUp;
             m_InteractiveItem.OnUp += HandleUp;
-            m_InteractiveItem.OnOver += HandleOver;
             
             m_InteractiveItem.OnOut += HandleOut;
         }
@@ -56,7 +55,6 @@ namespace VRStandardAssets.ShootingGallery
         {
             m_InteractiveItem.OnDown -= HandleUp;
             m_InteractiveItem.OnUp -= HandleUp;
-            m_InteractiveItem.OnOver -= HandleOver;
             m_InteractiveItem.OnOut -= HandleOut;
         }
 

@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Score: 1
   m_TimeOutDuration: -1
   m_DestroyTimeOutDuration: 5
-  m_DestroyPrefab: {fileID: 111004, guid: 500e811a7d7d4b84fb8ce9f87d242a80, type: 2}
+  m_DestroyPrefab: {fileID: 111004, guid: 0a846076b99dbce45ae4373d0aff8258, type: 2}
   m_DestroyClip: {fileID: 8300000, guid: fd01d3e429819774181394d1ad09e6f2, type: 3}
   m_SpawnClip: {fileID: 8300000, guid: 906fabe377b8e8f4397285b9c752041a, type: 3}
   m_MissedClip: {fileID: 8300000, guid: ab3d0eee05f16c74db5adf795fb073d5, type: 3}
