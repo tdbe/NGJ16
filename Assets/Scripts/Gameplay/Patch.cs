@@ -104,7 +104,7 @@ public class Patch : MonoBehaviour
 
     void Update()
     {
-        Camera.main.transform.Rotate(Vector3.up,2*Time.deltaTime);
+        //Camera.main.transform.Rotate(Vector3.up,2*Time.deltaTime);
 
         if (Input.GetButtonDown("Fire1"))
         {
