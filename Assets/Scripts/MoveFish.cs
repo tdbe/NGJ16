@@ -77,7 +77,8 @@ public class MoveFish : MonoBehaviour {
             //TODO: make this the eyes
             transform.LookAt(targetForDomeCollision);
 
-            GetComponent<Renderer>().enabled = false;
+            //GetComponent<Renderer>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
 
             //TODO:
             //HERE WE RICOCHET FISH (instantiate)

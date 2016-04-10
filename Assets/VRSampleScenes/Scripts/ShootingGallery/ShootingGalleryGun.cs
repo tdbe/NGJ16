@@ -85,7 +85,8 @@ namespace VRStandardAssets.ShootingGallery
         private IEnumerator Fire(Transform target)
         {
             // Play the sound of the gun firing.
-            m_GunAudio.Play();
+            if(m_GunAudio.enabled)
+                m_GunAudio.Play();
 
             // Set the length of the line renderer to the default.
             float lineLength = m_DefaultLineLength;
@@ -129,7 +130,8 @@ namespace VRStandardAssets.ShootingGallery
             float timer = 0f;
 
             // While that timer has not yet reached the length of time that the gun effects should be visible for...
-            while (timer < m_GunFlareVisibleSeconds)
+            //while (timer < m_GunFlareVisibleSeconds)
+            while (Input.GetButton("Fire1"))
             {
                 // ... set the line renderer to start at the gun and finish forward of the gun the determined distance.
                 m_GunFlare.SetPosition(0, m_GunEnd.position);
