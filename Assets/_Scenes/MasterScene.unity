@@ -123,7 +123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421084, guid: 3838180081f91be43bfe0130c54e4560, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 19835124, guid: 3838180081f91be43bfe0130c54e4560, type: 2}
       propertyPath: InitialModule.startColor.maxColor.rgba
@@ -317,7 +317,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 471240, guid: ab81a05a3c3285b47be13f5c0878ddec, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 155142, guid: ab81a05a3c3285b47be13f5c0878ddec, type: 2}
       propertyPath: m_IsActive
@@ -386,7 +386,10 @@ MonoBehaviour:
   range: 10
   timeToFix: 0.5
   tagToFix: isFixable
-  lineRenderer: {fileID: 256881027}
+  trailRendererDistanceFromCam: 20
+  trailRendererPrefab: {fileID: 137582, guid: 37696a3aa834b8b43b846fdfface024c, type: 2}
+  currentTrailRenderer: {fileID: 0}
+  m_VRInput: {fileID: 319848124}
 --- !u!4 &256881026
 Transform:
   m_ObjectHideFlags: 0
@@ -828,7 +831,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 460524, guid: 3c4ad6a89c4a5af4a85493d3c5f6d3da, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 107622, guid: 3c4ad6a89c4a5af4a85493d3c5f6d3da, type: 2}
       propertyPath: m_Name
@@ -977,7 +980,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 460524, guid: 3c4ad6a89c4a5af4a85493d3c5f6d3da, type: 2}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 107622, guid: 3c4ad6a89c4a5af4a85493d3c5f6d3da, type: 2}
       propertyPath: m_Name
@@ -3213,7 +3216,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 460524, guid: 3c4ad6a89c4a5af4a85493d3c5f6d3da, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 107622, guid: 3c4ad6a89c4a5af4a85493d3c5f6d3da, type: 2}
       propertyPath: m_Name
@@ -3456,7 +3459,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499006, guid: 9f2d97dd5339fae41bfe951c68d069cb, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 162548, guid: 9f2d97dd5339fae41bfe951c68d069cb, type: 2}
       propertyPath: m_Name
@@ -3530,7 +3533,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 460524, guid: 3c4ad6a89c4a5af4a85493d3c5f6d3da, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 107622, guid: 3c4ad6a89c4a5af4a85493d3c5f6d3da, type: 2}
       propertyPath: m_Name
@@ -7458,7 +7461,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499006, guid: 9f2d97dd5339fae41bfe951c68d069cb, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 10883172, guid: 9f2d97dd5339fae41bfe951c68d069cb, type: 2}
       propertyPath: m_Intensity
@@ -7873,7 +7876,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433588, guid: 565fa42cafc247f4f87fd720db4871ad, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11415056, guid: 565fa42cafc247f4f87fd720db4871ad, type: 2}
       propertyPath: m_ShootingGalleryController
@@ -8094,7 +8097,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22420888, guid: ad9d8e2e1e1e6774bab6f142ed0c6f51, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 22420888, guid: ad9d8e2e1e1e6774bab6f142ed0c6f51, type: 2}
       propertyPath: m_AnchoredPosition.x

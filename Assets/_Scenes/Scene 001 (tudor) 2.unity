@@ -387,7 +387,10 @@ MonoBehaviour:
   range: 10
   timeToFix: 0.5
   tagToFix: isFixable
-  lineRenderer: {fileID: 0}
+  trailRendererDistanceFromCam: 20
+  trailRendererPrefab: {fileID: 137582, guid: 37696a3aa834b8b43b846fdfface024c, type: 2}
+  currentTrailRenderer: {fileID: 0}
+  m_VRInput: {fileID: 319848124}
 --- !u!4 &256881026
 Transform:
   m_ObjectHideFlags: 0
@@ -3446,7 +3449,7 @@ Prefab:
       objectReference: {fileID: 319848124}
     - target: {fileID: 22442236, guid: 863a0315eb7aa5349ba3dd88bfdbc120, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22493394, guid: 863a0315eb7aa5349ba3dd88bfdbc120, type: 2}
       propertyPath: m_AnchoredPosition.y
