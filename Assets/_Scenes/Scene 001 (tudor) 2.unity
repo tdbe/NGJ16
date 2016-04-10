@@ -317,7 +317,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 471240, guid: ab81a05a3c3285b47be13f5c0878ddec, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 155142, guid: ab81a05a3c3285b47be13f5c0878ddec, type: 2}
       propertyPath: m_IsActive
@@ -387,10 +387,7 @@ MonoBehaviour:
   range: 10
   timeToFix: 0.5
   tagToFix: isFixable
-  trailRendererDistanceFromCam: 20
-  trailRendererPrefab: {fileID: 137582, guid: 37696a3aa834b8b43b846fdfface024c, type: 2}
-  currentTrailRenderer: {fileID: 0}
-  m_VRInput: {fileID: 319848124}
+  lineRenderer: {fileID: 0}
 --- !u!4 &256881026
 Transform:
   m_ObjectHideFlags: 0
