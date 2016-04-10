@@ -191,6 +191,8 @@ namespace VRStandardAssets.ShootingGallery
 
             // Find a reference to the ShootingTarget script on the target gameobject and call it's Restart function.
             ShootingTarget shootingTarget = target.GetComponent<ShootingTarget>();
+            //ShootingTarget shootingTarget = target.transform.GetChild(0).GetComponent<ShootingTarget>();
+            
             shootingTarget.Restart(timeRemaining);
 
             // Subscribe to the OnRemove event.
@@ -222,7 +224,8 @@ namespace VRStandardAssets.ShootingGallery
                                   Random.Range (m_SphereSpawnInnerRadius, m_SphereSpawnOuterRadius);
 
             // Find a random height between the camera's height and the maximum.
-            float randomHeight = Random.Range (m_Camera.position.y, m_SphereSpawnMaxHeight);
+            /*float randomHeight = Random.Range (m_Camera.position.y, m_SphereSpawnMaxHeight);*/
+            float randomHeight = Random.Range (0, m_SphereSpawnMaxHeight);
 
             // The the random point on the circle is on the XZ plane and the random height is the Y axis.
             return new Vector3(randomCirclePoint.x, randomHeight, randomCirclePoint.y);

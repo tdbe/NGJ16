@@ -51,6 +51,12 @@ namespace VRStandardAssets.Utils
         }
 
 
+        private void Start()
+        {
+            //HARDCODED LAYER FOR "MAZEWALLS"
+            m_ExclusionLayers = 1 << 9;
+        }
+
         private void Update()
         {
             EyeRaycast();
@@ -72,16 +78,22 @@ namespace VRStandardAssets.Utils
             // Do the raycast forweards to see if we hit an interactive item
             if (Physics.Raycast(ray, out hit, m_RayLength, ~m_ExclusionLayers))
             {
+                //Debug.Log(hit.collider.gameObject.name);
                 VRInteractiveItem interactible = hit.collider.GetComponent<VRInteractiveItem>(); //attempt to get the VRInteractiveItem on the hit object
                 m_CurrentInteractible = interactible;
 
                 // If we hit an interactive item and it's not the same as the last interactive item, then call Over
                 if (interactible && interactible != m_LastInteractible)
-                    interactible.Over(); 
+                {
+                    interactible.Over();
 
+                }
                 // Deactive the last interactive item 
                 if (interactible != m_LastInteractible)
+                {
                     DeactiveLastInteractible();
+
+                }
 
                 m_LastInteractible = interactible;
 
