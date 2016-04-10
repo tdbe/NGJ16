@@ -71,7 +71,12 @@ namespace VRStandardAssets.Utils
                     }
                     beganHold = false;
                 }
-
+                /*
+                if (Input.GetButtonUp("Fire1"))
+                {
+                    beganHold = false;
+                }
+                */
                 //TODO: sparse calls, like on move
                 //Patch.Instance.UpdateLineRendererOnTarget(Vector3.zero);
 

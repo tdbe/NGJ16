@@ -111,7 +111,7 @@ public class Patch : MonoBehaviour
             HandleDown();
         }
         else
-        if (Input.GetButtonUp("Fire1"))
+        if (isDragging && !Input.GetButton("Fire1"))
         {
             HandleUp();
         }
