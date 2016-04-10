@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20.8}
+  m_LocalPosition: {x: 0, y: 5.41, z: 20.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,24 +55,24 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Time: 15
-  m_StartWidth: 0.5
-  m_EndWidth: 1
+  m_StartWidth: 1
+  m_EndWidth: 2
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4289593599
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4289593599
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4289593599
     m_Color[3]:
       serializedVersion: 2
-      rgba: 1895825407
+      rgba: 2075001087
     m_Color[4]:
       serializedVersion: 2
-      rgba: 16777215
+      rgba: 11403519
   m_MinVertexDistance: 0.1
   m_Autodestruct: 1
 --- !u!1001 &100100000
