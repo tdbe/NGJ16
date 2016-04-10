@@ -10,10 +10,13 @@ public class Patch : MonoBehaviour
     float time;
     public LineRenderer lineRenderer;
 
-
+    [SerializeField]
+    private VRStandardAssets.Utils.VRInput m_VRInput;
 
     private static Patch s_Instance;
 
+
+    private bool isDragging = false;
 
     public static Patch Instance
     {
@@ -50,7 +53,31 @@ public class Patch : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-	public void UpdateLineRenderer(Vector3 destination)
+
+    private void OnEnable()
+    {
+        m_VRInput.OnDown += HandleDown;
+        m_VRInput.OnUp += HandleUp;
+    }
+
+
+    private void OnDisable()
+    {
+        m_VRInput.OnDown -= HandleDown;
+        m_VRInput.OnUp -= HandleUp;
+    }
+
+    private void HandleUp()
+    {
+        isDragging = false;
+    }
+
+    private void HandleDown()
+    {
+        isDragging = true;
+    }
+
+    public void UpdateLineRenderer(Vector3 destination)
     {
         //Debug.Log("OnDown in general");
         lineRenderer.SetPosition(0, gameObject.transform.position);
@@ -67,6 +94,29 @@ public class Patch : MonoBehaviour
     void Update()
     {
         //Camera.main.transform.Rotate(Vector3.up,Time.deltaTime);
+
+
+    }
+
+    void FixedUpdate()
+    {
+        Vector3 fwd = mainCamera.TransformDirection(Vector3.forward);
+
+        RaycastHit hit;
+        Ray ray = new Ray(mainCamera.position, fwd);
+
+        //Debug.DrawRay(mainCamera.position, mainCamera.TransformDirection(Vector3.forward) * range, Color.red);
+
+        if (Input.GetMouseButton(0))
+        {
+            if (Physics.Raycast(ray, out hit, range))
+            {
+                lineRenderer.SetPosition(0, gameObject.transform.position);
+                lineRenderer.SetPosition(1, hit.transform.position);
+                   
+            }
+        }
+
     }
 
     /*
