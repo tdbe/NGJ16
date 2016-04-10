@@ -98,7 +98,7 @@ public class MoveFish : MonoBehaviour {
     {
         foreach (ContactPoint contact in collision.contacts)
         {
-            Debug.Log(contact.otherCollider.gameObject);
+            //Debug.Log(contact.otherCollider.gameObject);
             if(contact.otherCollider.gameObject.layer == layerOfDome)
             {
                 if (isMoving)

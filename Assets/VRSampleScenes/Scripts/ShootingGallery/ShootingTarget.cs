@@ -44,13 +44,18 @@ namespace VRStandardAssets.ShootingGallery
 
         private void OnEnable ()
         {
-            m_InteractiveItem.OnDown += HandleDown;
+            m_InteractiveItem.OnDown += HandleUp;
+            m_InteractiveItem.OnUp += HandleUp;
+            
+            m_InteractiveItem.OnOut += HandleOut;
         }
 
 
         private void OnDisable ()
         {
-            m_InteractiveItem.OnDown -= HandleDown;
+            m_InteractiveItem.OnDown -= HandleUp;
+            m_InteractiveItem.OnUp -= HandleUp;
+            m_InteractiveItem.OnOut -= HandleOut;
         }
 
 
@@ -143,9 +148,21 @@ namespace VRStandardAssets.ShootingGallery
                 OnRemove (this);
         }
 
-
-        private void HandleDown()
+        private void HandleOver()
         {
+
+
+        }
+
+        private void HandleOut()
+        {
+
+        }
+
+        private void HandleUp()
+        {
+
+            Debug.Log("Handle Down on shooting target");
             // If it's already ending, do nothing else.
             if (m_IsEnding)
                 return;

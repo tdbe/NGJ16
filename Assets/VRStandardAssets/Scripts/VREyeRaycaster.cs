@@ -32,7 +32,9 @@ namespace VRStandardAssets.Utils
             get { return m_CurrentInteractible; }
         }
 
-        
+
+
+
         private void OnEnable()
         {
             m_VrInput.OnClick += HandleClick;
@@ -62,8 +64,12 @@ namespace VRStandardAssets.Utils
             EyeRaycast();
         }
 
+        public void handleTargetDown(RaycastHit hit)
+        {
+           
+        }
       
-        private void EyeRaycast()
+        public void EyeRaycast()
         {
             // Show the debug ray if required
             if (m_ShowDebugRay)
@@ -78,6 +84,8 @@ namespace VRStandardAssets.Utils
             // Do the raycast forweards to see if we hit an interactive item
             if (Physics.Raycast(ray, out hit, m_RayLength, ~m_ExclusionLayers))
             {
+
+
                 //Debug.Log(hit.collider.gameObject.name);
                 VRInteractiveItem interactible = hit.collider.GetComponent<VRInteractiveItem>(); //attempt to get the VRInteractiveItem on the hit object
                 m_CurrentInteractible = interactible;
@@ -103,9 +111,12 @@ namespace VRStandardAssets.Utils
 
                 if (OnRaycasthit != null)
                     OnRaycasthit(hit);
+
+
             }
             else
             {
+               
                 // Nothing was hit, deactive the last interactive item.
                 DeactiveLastInteractible();
                 m_CurrentInteractible = null;
