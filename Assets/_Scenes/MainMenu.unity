@@ -494,7 +494,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11461874, guid: 8425dec361a86f6419d316a88d6c87d9, type: 2}
       propertyPath: m_SceneToLoad
-      value: Game
+      value: Scene 001 (tudor)
       objectReference: {fileID: 0}
     - target: {fileID: 2388964, guid: 8425dec361a86f6419d316a88d6c87d9, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -2002,7 +2002,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11461874, guid: 8425dec361a86f6419d316a88d6c87d9, type: 2}
       propertyPath: m_SceneToLoad
-      value: Game
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2388964, guid: 8425dec361a86f6419d316a88d6c87d9, type: 2}
       propertyPath: m_Materials.Array.data[0]
