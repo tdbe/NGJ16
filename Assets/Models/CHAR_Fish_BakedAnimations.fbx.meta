@@ -29,10 +29,38 @@ ModelImporter:
     400020: Tail1
     400022: Tail2
     400024: Tail3
+    2300000: CHAR_Fish
+    3300000: CHAR_Fish
     4300000: CHAR_Fish
     7400000: Take 001
+    7400002: Take 001 //// CHAR_Fish
+    7400004: Take 001 //// Root
+    7400006: Take 001 //// Tail1
+    7400008: Take 001 //// Tail2
+    7400010: Take 001 //// Tail3
+    7400012: Take 001 //// R_Fin1
+    7400014: Take 001 //// R_Fin2
+    7400016: Take 001 //// L_Fin1
+    7400018: Take 001 //// L_Fin2
+    7400020: Take 001 //// Catcher1
+    7400022: Take 001 //// Catcher2
+    7400024: Take 001 //// Jaw
     9500000: //RootNode
+    11100000: //RootNode
+    11100002: Catcher1
+    11100004: Catcher2
+    11100006: CHAR_Fish
+    11100008: Jaw
+    11100010: L_Fin1
+    11100012: L_Fin2
+    11100014: R_Fin1
+    11100016: R_Fin2
+    11100018: Root
+    11100020: Tail1
+    11100022: Tail2
+    11100024: Tail3
     13700000: CHAR_Fish
+    13700002: Root
   materials:
     importMaterials: 1
     materialName: 0
@@ -51,13 +79,13 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 0
+    animationWrapMode: 2
     extraExposedTransformPaths: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -91,7 +119,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

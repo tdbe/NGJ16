@@ -44,6 +44,7 @@ namespace VRStandardAssets.ShootingGallery
 
         private void OnEnable ()
         {
+            m_InteractiveItem.OnOver += HandleOver;
             m_InteractiveItem.OnDown += HandleUp;
             m_InteractiveItem.OnUp += HandleUp;
             
@@ -53,6 +54,7 @@ namespace VRStandardAssets.ShootingGallery
 
         private void OnDisable ()
         {
+            m_InteractiveItem.OnOver -= HandleOver;
             m_InteractiveItem.OnDown -= HandleUp;
             m_InteractiveItem.OnUp -= HandleUp;
             m_InteractiveItem.OnOut -= HandleOut;
@@ -69,6 +71,7 @@ namespace VRStandardAssets.ShootingGallery
         public void Restart (float gameTimeRemaining)
         {
             // When the target is spawned turn the visual and physical aspects on.
+            if(m_Renderer!=null)
             m_Renderer.enabled = true;
             m_Collider.enabled = true;
 
@@ -111,7 +114,8 @@ namespace VRStandardAssets.ShootingGallery
             m_IsEnding = true;
 
             // Turn off the visual and physical aspects.
-            m_Renderer.enabled = false;
+            if (m_Renderer != null)
+                m_Renderer.enabled = false;
             m_Collider.enabled = false;
             
             // Play the clip of the target being missed.
@@ -140,7 +144,8 @@ namespace VRStandardAssets.ShootingGallery
             m_IsEnding = true;
 
             // Turn off the visual and physical aspects.
-            m_Renderer.enabled = false;
+            if (m_Renderer != null)
+                m_Renderer.enabled = false;
             m_Collider.enabled = false;
 
             // Tell subscribers that this target is ready to be removed.
@@ -171,6 +176,7 @@ namespace VRStandardAssets.ShootingGallery
             m_IsEnding = true;
 
             // Turn off the visual and physical aspects.
+            if(m_Renderer!=null)
             m_Renderer.enabled = false;
             m_Collider.enabled = false;
 
