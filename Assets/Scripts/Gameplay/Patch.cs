@@ -8,7 +8,11 @@ public class Patch : MonoBehaviour
     public float timeToFix = 1f;
     public string tagToFix = "isFixable";
     float time;
-    public LineRenderer lineRenderer;
+    //public LineRenderer lineRenderer;
+    public float trailRendererDistanceFromCam = 20;
+    public GameObject trailRendererPrefab;
+    public GameObject currentTrailRenderer;
+    //public int lineRendererIndex = 0;
 
     [SerializeField]
     private VRStandardAssets.Utils.VRInput m_VRInput;
@@ -50,38 +54,45 @@ public class Patch : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main.transform;
-        lineRenderer = GetComponent<LineRenderer>();
+        //lineRenderer = GetComponent<LineRenderer>();
+        //lineRendererIndex = 0;
+        
     }
 
 
     private void OnEnable()
     {
-        m_VRInput.OnDown += HandleDown;
-        m_VRInput.OnUp += HandleUp;
+        //m_VRInput.OnDown += HandleDown;
+        //m_VRInput.OnUp += HandleUp;
     }
 
 
     private void OnDisable()
     {
-        m_VRInput.OnDown -= HandleDown;
-        m_VRInput.OnUp -= HandleUp;
+        //m_VRInput.OnDown -= HandleDown;
+        //m_VRInput.OnUp -= HandleUp;
     }
 
-    private void HandleUp()
+    public void HandleUp()
     {
         isDragging = false;
+        currentTrailRenderer.transform.parent = null;
     }
 
-    private void HandleDown()
+    public void HandleDown()
     {
         isDragging = true;
+        currentTrailRenderer = (GameObject)Instantiate(trailRendererPrefab, Camera.main.transform.position + Camera.main.transform.forward* trailRendererDistanceFromCam, Quaternion.identity);
+
+        currentTrailRenderer.transform.parent = Camera.main.transform;
+        //currentTrailRenderer.transform.position = Camera.main.transform.position + Camera.main.transform.forward * trailRendererDistanceFromCam;
     }
 
     public void UpdateLineRenderer(Vector3 destination)
     {
         //Debug.Log("OnDown in general");
-        lineRenderer.SetPosition(0, gameObject.transform.position);
-        lineRenderer.SetPosition(1, destination);
+        //lineRenderer.SetPosition(0, gameObject.transform.position);
+        //lineRenderer.SetPosition(1, destination);
     }
 
     //Line renderer must be updated every now and then, not every frame. Need to look at the Over event in VRInteractiveItem.cs (which goes on each target)
@@ -93,12 +104,20 @@ public class Patch : MonoBehaviour
 
     void Update()
     {
-        //Camera.main.transform.Rotate(Vector3.up,Time.deltaTime);
+        Camera.main.transform.Rotate(Vector3.up,2*Time.deltaTime);
 
-
+        if (Input.GetButtonDown("Fire1"))
+        {
+            HandleDown();
+        }
+        else
+        if (Input.GetButtonUp("Fire1"))
+        {
+            HandleUp();
+        }
     }
 
-    void FixedUpdate()
+    void aFixedUpdate()
     {
         Vector3 fwd = mainCamera.TransformDirection(Vector3.forward);
 
@@ -107,13 +126,13 @@ public class Patch : MonoBehaviour
 
         //Debug.DrawRay(mainCamera.position, mainCamera.TransformDirection(Vector3.forward) * range, Color.red);
 
-        if (Input.GetMouseButton(0))
+        if (isDragging)
         {
-            if (Physics.Raycast(ray, out hit, range))
+            if (!Physics.Raycast(ray, out hit, range))
             {
-                lineRenderer.SetPosition(0, gameObject.transform.position);
-                lineRenderer.SetPosition(1, hit.transform.position);
-                   
+                // lineRenderer.SetPosition(0, gameObject.transform.position);
+                //lineRenderer.SetPosition(1, hit.transform.position);
+                
             }
         }
 

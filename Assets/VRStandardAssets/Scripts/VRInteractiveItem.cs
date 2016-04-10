@@ -40,9 +40,19 @@ namespace VRStandardAssets.Utils
             if (OnOver != null)
             {
                 
-                    OnOver();
-                
+                OnOver();
 
+                if (tag == Patch.Instance.tagToFix)
+                {
+                    if (!beganHold && Input.GetButton("Fire1"))
+                    {
+                        Debug.Log("BEGAN HOLD TRUE");
+                        tapDownBeginTime = Time.time;
+                        beganHold = true;
+                    }
+
+
+                }
             }
         }
 
@@ -53,7 +63,7 @@ namespace VRStandardAssets.Utils
                 //if(beganHold)
                 //Debug.Log("beganTap: " + beganHold + "; tapDownBeginTime: " + tapDownBeginTime + "; Time.time - tapDownBeginTime: " + (Time.time - tapDownBeginTime) + "; Patch.Instance.timeToFix: " + Patch.Instance.timeToFix);
 
-                if (beganHold && Time.time - tapDownBeginTime > Patch.Instance.timeToFix)
+                if ((beganHold ) && Time.time - tapDownBeginTime > Patch.Instance.timeToFix)
                 {
                     if (OnDown != null)
                     {
