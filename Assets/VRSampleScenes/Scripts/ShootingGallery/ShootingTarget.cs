@@ -191,7 +191,9 @@ namespace VRStandardAssets.ShootingGallery
             GameObject destroyedTarget = Instantiate(m_DestroyPrefab, transform.position, transform.rotation) as GameObject;
 
             // Destroy the shattered target after it's time out duration.
-            Destroy(destroyedTarget, m_DestroyTimeOutDuration);
+            //Destroy(destroyedTarget, m_DestroyTimeOutDuration);
+            Destroy(destroyedTarget);
+            //DestroyImmediate(destroyedTarget);
 
             // Tell subscribers that this target is ready to be removed.
             if (OnRemove != null)

@@ -35,7 +35,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &147864
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -49,18 +49,49 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &161638
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 417644}
+  - 33: {fileID: 3354714}
+  - 23: {fileID: 2327954}
+  m_Layer: 0
+  m_Name: ShooterFPSWeaponFlare01 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &417644
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161638}
+  m_LocalRotation: {x: -0.7222516, y: -0.20393546, z: -0.17893967, w: 0.63619465}
+  m_LocalPosition: {x: 0.043, y: 0.064, z: 0.018}
+  m_LocalScale: {x: 5.9487944, y: 4.8513045, z: 1.6634309}
+  m_Children: []
+  m_Father: {fileID: 428888}
+  m_RootOrder: 0
 --- !u!4 &428888
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4400024, y: -0.22981167, z: -2.806024}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalRotation: {x: 0.063364595, y: 2.1827871e-11, z: 0, w: 0.9979904}
+  m_LocalPosition: {x: -0.51, y: 1.21, z: -18.45}
+  m_LocalScale: {x: 1.9635953, y: 1.979048, z: 2.9947166}
+  m_Children:
+  - {fileID: 417644}
+  - {fileID: 456650}
   m_Father: {fileID: 460524}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &456650
 Transform:
   m_ObjectHideFlags: 1
@@ -68,25 +99,50 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.470002, y: 0.37, z: -2.7960243}
+  m_LocalPosition: {x: 0, y: 0.32, z: 0.01}
   m_LocalScale: {x: 0.99, y: 0.99, z: 0.99}
   m_Children: []
-  m_Father: {fileID: 460524}
-  m_RootOrder: 0
+  m_Father: {fileID: 428888}
+  m_RootOrder: 1
 --- !u!4 &460524
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107622}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7500026, y: -5.034, z: -3.0039759}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.4997485, y: -0.4997482, z: -0.5002514, w: 0.50025177}
+  m_LocalPosition: {x: 0, y: -8.983918e-15, z: 0.00000015072514}
+  m_LocalScale: {x: 0.33273056, y: 0.66545993, z: 0.3327299}
   m_Children:
-  - {fileID: 456650}
   - {fileID: 428888}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!23 &2327954
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161638}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 92d3bf74cadd7124cb23f63bcca021b3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2336984
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -120,6 +176,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107680}
   m_Mesh: {fileID: 4300000, guid: 8e11124ae5f814343945b6de91189515, type: 3}
+--- !u!33 &3354714
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161638}
+  m_Mesh: {fileID: 4300002, guid: d6ea95de93448c7408900ef2fb236577, type: 3}
 --- !u!95 &9590678
 Animator:
   serializedVersion: 3
@@ -147,12 +210,12 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 0.9338235, g: 0.659359, b: 0.06866351, a: 1}
-  m_Intensity: 5
+  m_Intensity: 3.79
   m_Range: 2.7529907
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_Strength: 1
     m_Bias: 0.05

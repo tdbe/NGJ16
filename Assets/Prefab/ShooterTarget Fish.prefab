@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403214}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Catcher2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490312}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Fin1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489128}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Fin1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 441966}
   - 111: {fileID: 11105466}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CHAR_Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 468730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Catcher1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,10 +104,10 @@ GameObject:
   - 82: {fileID: 8225658}
   - 82: {fileID: 8217234}
   - 82: {fileID: 8250784}
-  - 65: {fileID: 6549988}
   - 54: {fileID: 5415484}
   - 114: {fileID: 11490252}
-  m_Layer: 9
+  - 136: {fileID: 13661972}
+  m_Layer: 10
   m_Name: ShooterTarget Fish
   m_TagString: isFixable
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 416878}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 430118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499892}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Fin2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 407410}
   - 137: {fileID: 13715214}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CHAR_Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 479802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 414108}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Fin2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0151224, y: 5.9811063, z: -22.476858}
+  m_LocalPosition: {x: 17.464489, y: 19.464901, z: 51.40542}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 441966}
@@ -412,23 +412,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6549988
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155142}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.75, z: 3.6}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &8217234
 AudioSource:
   m_ObjectHideFlags: 1
@@ -711,8 +699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   revolutionSpeed: 2
-  timeToSwim: 10
-  timeToSwimPlusMinus: 1
+  timeToSwim: 20
+  timeToSwimPlusMinus: 2
   layerOfDome: 9
   revolveToAttackCurve:
     serializedVersion: 2
@@ -738,6 +726,19 @@ MonoBehaviour:
   - {fileID: 143156, guid: 8194bb5ec733a164e8bac74998bd56d4, type: 2}
   - {fileID: 111464, guid: 2c261b53e38201a4e9a99ed08d847d34, type: 2}
   - {fileID: 114130, guid: 67914fdd514365542bf05f1ac31c4b7c, type: 2}
+--- !u!136 &13661972
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.9
+  m_Height: 3
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13715214
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -748,7 +749,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: f5bf5cfe1a4d9f74193dfba8618ab034, type: 2}
+  - {fileID: 2100000, guid: a44e48ea58da3a04ab84194496660fc7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

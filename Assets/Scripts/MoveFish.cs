@@ -20,10 +20,12 @@ public class MoveFish : MonoBehaviour {
     private bool isMoving = true;
 
     private bool isColliding = false;
-
+    private Vector3 collisionPt;
     //private GameObject parent;
 
     private float startedMoving = -1;
+
+    private Vector3 previousPos;
 
     //private Transform targetCrack;
 
@@ -46,6 +48,8 @@ public class MoveFish : MonoBehaviour {
         timeToSwim += Random.Range(-timeToSwimPlusMinus, timeToSwimPlusMinus);
 
         //targetCrack = transform.GetChild(0);
+
+        previousPos = transform.position;
     }
 
 	// Update is called once per frame
@@ -67,18 +71,26 @@ public class MoveFish : MonoBehaviour {
             transform.RotateAround(targetForDomeCollision.transform.position, Vector3.up, revolutionSpeed * Time.deltaTime * animRatioMinusOne);
 
 
+            //rotate fish based on direction or straight towards target.
+            Vector3 dir = (transform.position - previousPos).normalized;
+            Vector3 target = transform.position + dir * 100;
+            target = Vector3.Lerp(target, targetForDomeCollision.position, animationRatio);
+            transform.LookAt(target);
+
             //speed by curve also
         }
-        else if (isColliding)
+                            
+        if (isColliding )
         {
-            
+           // Debug.Log(Vector3.Distance(transform.position, Vector3.zero));
+ 
 
             //targetCrack.GetComponent<Collider>().enabled = true;
             //TODO: make this the eyes
-            transform.LookAt(targetForDomeCollision);
+            //transform.LookAt(targetForDomeCollision);
 
-            //GetComponent<Renderer>().enabled = false;
-            transform.GetChild(0).gameObject.SetActive(false);
+            //Turn off the fish here if you want
+            //transform.GetChild(0).gameObject.SetActive(false);
 
             //TODO:
             //HERE WE RICOCHET FISH (instantiate)
@@ -89,10 +101,26 @@ public class MoveFish : MonoBehaviour {
             isColliding = false;
 
             int which = Random.Range(0, crackTypesToSpawn.Length - 1);
-            GameObject child = (GameObject)Instantiate(crackTypesToSpawn[which], transform.position, transform.rotation);
+            
+            /*
+            if(Mathf.Abs(Vector3.Distance(collisionPt, Vector3.zero)) > 24)
+            {
+                collisionPt = transform.position;
+            }*/
+
+            GameObject child = (GameObject)Instantiate(crackTypesToSpawn[which], collisionPt + Vector3.up, transform.rotation);
             child.transform.parent = transform;
         }
-
+        
+        //this is a hack to "fix" the fact that the "target" pool reuses targets (which are now fish) so it doesn't destroy them, so it would spawn fish with water pouring out of a crack in front of them out in the ocean
+        if (gameObject.layer == 0 && Mathf.Abs(Vector3.Distance(transform.position, Vector3.zero)) > 24)
+        {
+            if(transform.childCount>1)
+                Destroy(transform.GetChild(transform.childCount - 1).gameObject);
+            gameObject.layer = layerOfDome + 1;
+            isMoving = true;
+        }
+        
 	}
 
     void OnCollisionEnter(Collision collision)
@@ -106,6 +134,7 @@ public class MoveFish : MonoBehaviour {
                 {
                     isMoving = false;
                     isColliding = true;
+                    collisionPt = contact.point;
                 }
                 return;
             }

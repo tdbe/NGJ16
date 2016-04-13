@@ -54,26 +54,26 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 15
-  m_StartWidth: 2
-  m_EndWidth: 4
+  m_Time: 3
+  m_StartWidth: 4.5
+  m_EndWidth: 2.5
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4289593599
+      rgba: 3430033919
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4289593599
+      rgba: 2456955391
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4289593599
+      rgba: 1366436351
     m_Color[3]:
       serializedVersion: 2
-      rgba: 2075001087
+      rgba: 359803391
     m_Color[4]:
       serializedVersion: 2
-      rgba: 11403519
-  m_MinVertexDistance: 0.1
+      rgba: 7481855
+  m_MinVertexDistance: 0.2
   m_Autodestruct: 1
 --- !u!1001 &100100000
 Prefab:

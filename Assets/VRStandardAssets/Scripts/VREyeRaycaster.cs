@@ -56,7 +56,7 @@ namespace VRStandardAssets.Utils
         private void Start()
         {
             //HARDCODED LAYER FOR "MAZEWALLS"
-            m_ExclusionLayers = 1 << 9;
+            m_ExclusionLayers = 1 << 9 | 1 << 10;
         }
 
         private void Update()

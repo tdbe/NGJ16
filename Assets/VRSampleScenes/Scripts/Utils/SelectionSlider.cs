@@ -78,6 +78,7 @@ namespace VRStandardAssets.Utils
 
             // Currently the bar is unfilled.
             m_BarFilled = false;
+            GetComponent<BoxCollider>().enabled = true;
 
             // Reset the timer and set the slider value as such.
             m_Timer = 0f;
@@ -127,6 +128,7 @@ namespace VRStandardAssets.Utils
 
             // If the loop has finished the bar is now full.
             m_BarFilled = true;
+            GetComponent<BoxCollider>().enabled = false;
 
             // If anything has subscribed to OnBarFilled call it now.
             if (OnBarFilled != null)

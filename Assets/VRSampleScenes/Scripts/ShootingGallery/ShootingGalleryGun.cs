@@ -94,7 +94,7 @@ namespace VRStandardAssets.ShootingGallery
             // If there is a target, the line renderer's length is instead the distance from the gun to the target.
             if (target)
                 lineLength = Vector3.Distance (m_GunEnd.position, target.position);
-
+            
             // Chose an index for a random flare mesh.
             int randomFlareIndex = Random.Range (0, m_FlareMeshes.Length);
 
@@ -106,6 +106,8 @@ namespace VRStandardAssets.ShootingGallery
             m_FlareMeshes[randomFlareIndex].transform.eulerAngles = randomEulerRotation;
             m_FlareMeshes[randomFlareIndex].SetActive (true);
 
+            Debug.Log(m_FlareMeshes[randomFlareIndex]);
+            
             // Play the particle system for the gun.
             m_FlareParticles.Play();
 
@@ -119,7 +121,7 @@ namespace VRStandardAssets.ShootingGallery
             m_GunFlare.enabled = false;
 
             // Turn the random flare mesh off.
-            m_FlareMeshes[randomFlareIndex].SetActive(false);
+           // m_FlareMeshes[randomFlareIndex].SetActive(false);
 
         }
 
@@ -135,7 +137,7 @@ namespace VRStandardAssets.ShootingGallery
             {
                 // ... set the line renderer to start at the gun and finish forward of the gun the determined distance.
                 m_GunFlare.SetPosition(0, m_GunEnd.position);
-                m_GunFlare.SetPosition(1, m_GunEnd.position + m_GunEnd.forward * lineLength);
+                m_GunFlare.SetPosition(1, Camera.main.transform.position + Camera.main.transform.forward * lineLength);
 
                 // Wait for the next frame.
                 yield return null;
